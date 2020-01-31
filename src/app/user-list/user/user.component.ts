@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit {
+export class UserComponent {
+  @Input() user: User;
+  @Output() getPost = new EventEmitter<number>();
+
+  get() {
+    this.getPost.emit(this.user.id);
+  }
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

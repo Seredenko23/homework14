@@ -1,1 +1,3 @@
-<p>user-list works!</p>
+<div>
+  <app-user (getPost)="clickE($event)" *ngFor="let user of users" [user]="user"></app-user>
+</div>
