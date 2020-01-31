@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiService} from '../rest/api';
+import {ApiService} from '../rest/api.service';
+import {User} from './shared/user.model';
+import {DataService} from '../shared/data.service';
 
 @Component({
   selector: 'app-user-list',
@@ -9,7 +11,7 @@ import {ApiService} from '../rest/api';
 export class UserListComponent implements OnInit {
   private users: User[];
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private data: DataService) { }
 
   ngOnInit() {
     this.api.getUsers()
@@ -19,7 +21,7 @@ export class UserListComponent implements OnInit {
   }
   clickE(e) {
     this.api.getPosts(e).subscribe(posts => {
-      console.log(posts);
+      this.data.changeData(posts);
     });
   }
 
