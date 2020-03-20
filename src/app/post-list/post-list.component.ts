@@ -8,7 +8,7 @@ import {Post} from './shared/post.model';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
-  private posts: Post[];
+  posts: Post[];
   constructor(private data: DataService) { }
 
   ngOnInit() {

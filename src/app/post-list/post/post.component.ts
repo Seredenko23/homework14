@@ -6,11 +6,7 @@ import {Post} from '../shared/post.model';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit {
+export class PostComponent {
   @Input() post: Post;
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }

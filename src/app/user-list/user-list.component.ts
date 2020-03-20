@@ -8,8 +8,9 @@ import {DataService} from '../shared/data.service';
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
+
 export class UserListComponent implements OnInit {
-  private users: User[];
+  users: User[];
 
   constructor(private api: ApiService, private data: DataService) { }
 
@@ -19,6 +20,7 @@ export class UserListComponent implements OnInit {
         this.users = users;
       });
   }
+
   clickE(e) {
     this.api.getPosts(e).subscribe(posts => {
       this.data.changeData(posts);

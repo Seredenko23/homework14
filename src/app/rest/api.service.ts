@@ -9,17 +9,15 @@ import {Post} from '../post-list/shared/post.model';
 })
 
 export class ApiService {
-  private BASE_URL = 'https://jsonplaceholder.typicode.com';
+  BASE_URL = 'https://jsonplaceholder.typicode.com';
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<User[]> {
-    // @ts-ignore
-    return this.http.get(this.BASE_URL + '/users');
+    return this.http.get<User[]>(this.BASE_URL + '/users');
   }
 
   getPosts(id: number): Observable<Post[]> {
-    // @ts-ignore
-    return this.http.get(`${this.BASE_URL}/posts?userId=${id}`);
+    return this.http.get<Post[]>(`${this.BASE_URL}/posts?userId=${id}`);
   }
 }
 
