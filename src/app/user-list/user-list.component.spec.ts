@@ -32,6 +32,7 @@ describe('userList', () => {
 
     api.getUsers.and.returnValue(of(fakedata));
 
+    // @ts-ignore
     const cmp = new UserListComponent(api);
     cmp.ngOnInit();
 

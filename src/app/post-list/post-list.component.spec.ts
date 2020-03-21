@@ -13,7 +13,7 @@ describe('postList', () => {
       },
     ];
 
-    data.currentData.and.returnValue(of(fakedata));
+    data.currentData = of(fakedata);
 
     const cmp = new PostListComponent(data);
     cmp.ngOnInit();

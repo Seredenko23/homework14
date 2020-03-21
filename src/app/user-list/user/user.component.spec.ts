@@ -1,5 +1,3 @@
-import {ComponentFixture} from '@angular/core/testing';
-import {TestBed} from '@angular/core/testing/src/test_bed';
 import {UserComponent} from './user.component';
 
 describe('UserComponent', () => {
